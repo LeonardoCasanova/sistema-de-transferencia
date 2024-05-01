@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Transferência de Dinheiro</title>
-</head>
-<body>
     <h1>Sistema de Transferência de Dinheiro</h1>
     <p>Este é um sistema de transferência de dinheiro entre usuários, desenvolvido com o framework Laravel.</p>
 
@@ -69,5 +61,3 @@
         "payer": 3,
         "payee": 2
       }</code><br>
-</body>
-</html>
