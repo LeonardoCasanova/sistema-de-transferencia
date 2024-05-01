@@ -1,32 +1,31 @@
-    <h1>Sistema de Transferência de Dinheiro</h1>
-    <p>Este é um sistema de transferência de dinheiro entre usuários, desenvolvido com o framework Laravel.</p>
+## Sistema de Transferência de Dinheiro
+    Este é um sistema de transferência de dinheiro entre usuários, desenvolvido com o framework Laravel.
 
-    <h2>Funcionalidades</h2>
-    <ul>
-        <li>Permite que usuários transfiram dinheiro entre si.</li>
-        <li>Validações de saldo suficiente, tipo de usuário e autorização externa.</li>
-        <li>Transações seguras com rollback em caso de erro.</li>
-    </ul>
+# Funcionalidades
 
-    <h2>Instalação</h2>
-    <ol>
-        <li><strong>Clonar o repositório:</strong><br>
-            <code>https://github.com/LeonardoCasanova/sistema-de-transferencia.git</code></li>
-        <li><strong>Instalar as dependências do Composer:</strong><br>
-            <code>cd nome-do-repositorio</code><br>
-            <code>composer install</code></li>
-        <li><strong>Configurar o arquivo de ambiente:</strong><br>
-            Renomeie o arquivo <code>.env.example</code> para <code>.env</code>.<br>
-            Configure as variáveis de ambiente, como conexão com o banco de dados.</li>
-        <li><strong>Subir o ambiente docker:</strong><br>
-            <code>docker-compose up -d</code></li>    
-        <li><strong>Gerar a chave de aplicação:</strong><br>
-            <code>php artisan key:generate</code></li>
-        <li><strong>Executar as migrações do banco de dados:</strong><br>
-            <code>docker-compose exec app php artisan migrate</code></li>
-        <li><strong>Iniciar o servidor de desenvolvimento:</strong><br>
-            <code>php artisan serve</code></li>
-    </ol>
+* Permite que usuários transfiram dinheiro entre si.
+* Validações de saldo suficiente, tipo de usuário e autorização externa.
+* Transações seguras com rollback em caso de erro.
+  
+
+## Instalação
+
+* Clonar o repositório:
+            ``` https://github.com/LeonardoCasanova/sistema-de-transferencia.git```
+* Instalar as dependências do Composer:
+            ``` cd nome-do-repositorio</code><br>
+            ``` composer install```
+* Configurar o arquivo de ambiente:
+            Renomeie o arquivo ``` .env.example ``` para  ```.env```
+            Configure as variáveis de ambiente, como conexão com o banco de dados.
+* Subir o ambiente docker:
+            ``` docker-compose up -d ```    
+* Gerar a chave de aplicação:
+            ``` php artisan key:generate```
+* Executar as migrações do banco de dados:
+            ``` docker-compose exec app php artisan migrate```
+* Iniciar o servidor de desenvolvimento:
+            ``` php artisan serve```
 
     <p>Agora você pode acessar o sistema em <a href="http://localhost">http://localhost</a>.</p>
 
