@@ -1,5 +1,5 @@
 ## Sistema de Transferência de Dinheiro
-    Este é um sistema de transferência de dinheiro entre usuários, desenvolvido com o framework Laravel.
+Este é um sistema de transferência de dinheiro entre usuários, desenvolvido com o framework Laravel.
 
 # Funcionalidades
 
@@ -13,7 +13,7 @@
 * Clonar o repositório:
             ``` https://github.com/LeonardoCasanova/sistema-de-transferencia.git```
 * Instalar as dependências do Composer:
-            ``` cd nome-do-repositorio</code><br>
+            ``` cd nome-do-repositorio ```
             ``` composer install```
 * Configurar o arquivo de ambiente:
             Renomeie o arquivo ``` .env.example ``` para  ```.env```
