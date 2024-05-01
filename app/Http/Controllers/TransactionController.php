@@ -8,6 +8,8 @@ use App\Models\Transaction;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class TransactionController extends Controller
 {
@@ -74,6 +76,9 @@ class TransactionController extends Controller
             // Confirma a transação
             DB::commit();
 
+            // Após a confirmação da transação, envia notificação ao recebedor
+            $this->sendNotification($request->payee);
+
             // Retorna uma resposta de sucesso
             return response()->json(['message' => 'Transferência realizada com sucesso'], 200);
         } catch (\Exception $e) {
@@ -103,5 +108,29 @@ class TransactionController extends Controller
 
         // Verifica se a transferência foi autorizada
         return isset($data['message']) && $data['message'] === 'Autorizado';
+    }
+
+    /**
+     * Envia notificação ao recebedor do pagamento.
+     *
+     * @param int $userId
+     * @return void
+     */
+    private function sendNotification($userId)
+    {
+        // URL do serviço de envio de notificação
+        $url = 'https://run.mocky.io/v3/54dc2cf1-3add-45b5-b5a9-6bf7e7f1f4a6';
+
+        // Faz a solicitação HTTP GET
+        $response = Http::get($url);
+
+        // Verifica se a notificação foi enviada com sucesso
+        if ($response['message'] === true) {
+            // Notificação enviada com sucesso
+            Log::info('Notificação enviada com sucesso para o usuário ' . $userId);
+        } else {
+            // Lidar com falha no envio da notificação
+            Log::error('Falha ao enviar notificação para o usuário ' . $userId);
+        }
     }
 }
