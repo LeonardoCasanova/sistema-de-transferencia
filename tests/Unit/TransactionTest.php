@@ -21,7 +21,6 @@ class TransactionTest extends TestCase
         $payer->cpf_cnpj ='42076478808';
         $payer->password = bcrypt('123456678');
         $payer->type = 'cliente'; // ou 'lojista', dependendo do tipo
-        $payer->balance = 1000; // Defina o saldo conforme necessário
         $payer->save();
 
         $payee = new User();
@@ -31,7 +30,6 @@ class TransactionTest extends TestCase
         $payer->cpf_cnpj ='42076478428';
         $payee->password = bcrypt('123456678');
         $payee->type = 'lojista'; // ou 'lojista', dependendo do tipo
-        $payee->balance = 0; // Defina o saldo conforme necessário
         $payee->save();
 
         $amount = 100;

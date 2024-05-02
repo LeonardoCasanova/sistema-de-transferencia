@@ -23,6 +23,9 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/register', [UserController::class, 'registerUser']);
 
-Route::post('/transferencia', [TransactionController::class, 'transfer']);
+Route::post('/transfer', [TransactionController::class, 'transfer']);
+
+Route::get('/transactions', [TransactionController::class, 'getTransactions']);
+
 
 

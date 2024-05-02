@@ -60,3 +60,5 @@ Este é um sistema de transferência de dinheiro entre usuários, desenvolvido c
         "payer": 3,
         "payee": 2
       }</code><br>
+    <p>Consultar transações:</p>
+    <code>GET: http://localhost/api/transactions?identifier=CPF/CNPJ ou email</code><br>

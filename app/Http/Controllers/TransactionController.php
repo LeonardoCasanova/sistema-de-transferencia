@@ -133,4 +133,34 @@ class TransactionController extends Controller
             Log::error('Falha ao enviar notificação para o usuário ' . $userId);
         }
     }
+
+    /**
+     * Consulta as transações realizadas com base no CPF/CNPJ ou e-mail do usuário.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getTransactions(Request $request)
+    {
+        // Validar os parâmetros de entrada
+        $request->validate([
+            'identifier' => 'required|string', // CPF/CNPJ ou e-mail do usuário
+        ]);
+
+        // Buscar o usuário pelo CPF/CNPJ ou e-mail
+        $user = User::where('cpf_cnpj', $request->identifier)
+                    ->orWhere('email', $request->identifier)
+                    ->first();
+
+        // Se o usuário não for encontrado, retornar uma resposta vazia
+        if (!$user) {
+            return response()->json(['message' => 'Nenhum usuário encontrado'], 404);
+        }
+
+        // Buscar as transações relacionadas ao usuário
+        $transactions = Transaction::where('user_id', $user->id)->get();
+
+        // Retornar as transações encontradas
+        return response()->json(['transacoes' => $transactions]);
+    }
 }
