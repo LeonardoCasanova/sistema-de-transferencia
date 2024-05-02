@@ -82,3 +82,6 @@
 172.18.0.1 - - [02/May/2024:13:07:24 +0000] "GET /api/transacoes?identifier=41127580817 HTTP/1.1" 200 345 "-" "PostmanRuntime/7.37.3"
 172.18.0.1 - - [02/May/2024:13:08:12 +0000] "GET /api/transactions?identifier=41127580817 HTTP/1.1" 200 345 "-" "PostmanRuntime/7.37.3"
 172.18.0.1 - - [02/May/2024:13:08:34 +0000] "GET /api/transactions?identifier=41127580814 HTTP/1.1" 200 820 "-" "PostmanRuntime/7.37.3"
+172.18.0.1 - - [02/May/2024:13:15:07 +0000] "POST /api/transferencia HTTP/1.1" 404 6616 "-" "PostmanRuntime/7.37.3"
+172.18.0.1 - - [02/May/2024:13:15:36 +0000] "POST /api/transfer HTTP/1.1" 200 65 "-" "PostmanRuntime/7.37.3"
+172.18.0.1 - - [02/May/2024:13:15:46 +0000] "GET /api/transactions?identifier=41127580814 HTTP/1.1" 200 978 "-" "PostmanRuntime/7.37.3"

@@ -53,7 +53,7 @@ Este é um sistema de transferência de dinheiro entre usuários, desenvolvido c
         "type": "lojista"
     }</code><br>
     <p>Fazer uma transferencia:</p>
-    <code>POST: http://localhost/api/transferencia</code><br>
+    <code>POST: http://localhost/api/transfer</code><br>
     <p>Payload de exemplo:</p>
     <code>{
         "value": 10.0,
